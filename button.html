@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style type="text/css">
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 5px 36px;
+      margin-top: 25px;
+      color: #ffffff;
+      font-size: 14px;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      background-image: linear-gradient(-225deg, #20e2d7 0%, #f9fea5 100%);
+      overflow: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    a span {
+      position: absolute;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: ani 0.5s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes ani {
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5s;
+      }
+
+      100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a id="btn">登录</a>
+  <script>
+    let btn = document.getElementById('btn')
+    btn.addEventListener('click', function (e) {
+      let x = e.clientX - e.target.offsetLeft
+      let y = e.clientY - e.target.offsetTop
+      let span = document.createElement('span')
+      span.style.left = x + 'px'
+      span.style.top = y + 'px'
+      this.appendChild(span)
+      setTimeout(function () {
+        span.remove()
+      }, 500)
+    })
+  </script>
+
+</body>
+
+</html>
