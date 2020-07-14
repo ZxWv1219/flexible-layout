@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff173;
+      transition: .5s;
+      padding: 20px;
+    }
+
+    .container .content {
+      position: relative;
+      max-width: 800px;
+    }
+
+    h2 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .container .content img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      position: relative;
+      padding: 5px 20px;
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      color: #fff;
+      background: #111;
+    }
+
+    .container#blur.active {
+      filter: blur(20px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    #popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      padding: 50px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, .3);
+      background: #fff;
+      visibility: hidden;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    #popup.active {
+      top: 50%;
+      visibility: visible;
+      opacity: 1;
+      transition: .3s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="blur">
+    <div class="content">
+      <h2>如果你只为薪水而工作，你的生活将因此而陷入平庸之中，你找不到人生中真正的成就感，工作的目的虽然是为了获得报酬，但工作能给你带来的远比工资要多的多。努力工作并且学习，你会收获很多。</h2>
+      <img src="https://img.alicdn.com/imgextra/i1/407320390/O1CN01TsKN701Ekf4pZohxW_!!407320390.jpg" alt="">
+      <a href="#" onclick="toggle()">Read more</a>
+    </div>
+  </div>
+  <div id="popup">
+    <p>如果你只为薪水而工作，你的生活将因此而陷入平庸之中，你找不到人生中真正的成就感，工作的目的虽然是为了获得报酬，但工作能给你带来的远比工资要多的多。努力工作并且学习，你会收获很多。</p>
+    <a href="#" onclick="toggle()">close</a>
+
+  </div>
+
+  <script>
+    function toggle() {
+      let blur = document.getElementById('blur')
+      blur.classList.toggle('active')
+      let popup = document.getElementById('popup')
+      popup.classList.toggle('active')
+    }
+  </script>
+</body>
+
+</html>
