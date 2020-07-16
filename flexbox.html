@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      height: 50px;
+      background-color: antiquewhite;
+    }
+
+    section {
+      flex: 1;
+      display: flex;
+    }
+
+    .main {
+      flex: 1;
+      background-color: aqua;
+    }
+
+    .left {
+      order: -1;
+      flex: 0 0 150px;
+      background-color: aquamarine;
+    }
+
+    .right {
+      flex: 0 0 150px;
+      background-color: azure;
+    }
+
+    footer {
+      height: 50px;
+      background-color: blueviolet;
+    }
+
+    /* 响应式布局 */
+    @media (max-width: 768px) {
+      section {
+        flex-direction: column;
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>头</header>
+  <section>
+    <div class="main">main</div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </section>
+  <footer>footer</footer>
+</body>
+
+</html>

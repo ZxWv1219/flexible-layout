@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    div.content {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    div.content>div {
+      flex: 0 0 150px;
+      height: 50px;
+      background-color: aqua;
+    }
+
+    div.content>div:hover {
+      align-self: stretch;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>哈哈哈哈</h1>
+    <div class="content">
+      <div class="o1">星期一</div>
+      <div class="o2">星期二</div>
+      <div class="o3">星期三</div>
+      <div class="o4">星期四</div>
+    </div>
+  </section>
+</body>
+
+</html>
